@@ -20,5 +20,6 @@ public final class Main {
         packetBroker.subscribe(new ServerSubscriber());
         packetBroker.subscribe(new BroadcastSubscriber());
         packetBroker.publish("broadcast", new BroadcastPacket("Hello from server!"));
+        new ServerLockingThread().start();
     }
 }
